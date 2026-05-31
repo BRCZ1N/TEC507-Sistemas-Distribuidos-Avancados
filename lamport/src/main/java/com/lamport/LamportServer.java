@@ -1,5 +1,5 @@
 package com.lamport;
-
+import com.google.gson.Gson;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -83,10 +83,16 @@ class LamportServer extends Thread {
     public void processMessage(Socket client) throws IOException {
 
         BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        Gson gson = new Gson();
         String inputLine;
         while (true) {
             try {
-                if (!((inputLine = in.readLine()) != null)) break;
+                if (!((inputLine = in.readLine()) != null)) {
+
+                    Event message = gson.fromJson(inputLine, Event.class);
+                    receiveEvent(message);
+
+                };
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -96,12 +102,8 @@ class LamportServer extends Thread {
             System.out.println(inputLine);
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        Event message = mapper.readValue(inputLine, Event.class);
-        receiveEvent(message);
-
         in.close();
-        clientSocket.close();
+        client.close();
 
     }
 
@@ -116,7 +118,11 @@ class LamportServer extends Thread {
                 Socket client = server.accept();
 
                 new Thread(() -> {
-                    processMessage(client);
+                    try {
+                        processMessage(client);
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                 }).start();
 
             } catch (IOException e) {

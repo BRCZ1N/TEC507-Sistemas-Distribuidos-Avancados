@@ -7,8 +7,9 @@ class Main {
     public static void main(String[] args) {
 
         try {
-
-            LamportServer lamport = new LamportServer(5000, 1);
+            int port = 5000, processId = 1;
+            System.out.println("Iniciando servidor Lamport TCP - porta: " + port + " número do processo: " + processId);
+            LamportServer lamport = new LamportServer(port,processId);
 
         } catch (IOException e) {
 
