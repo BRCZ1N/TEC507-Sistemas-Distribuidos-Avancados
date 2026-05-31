@@ -1,16 +1,19 @@
-public class Lamport extends Thread{
+package lamport;
+
+public class LamportServer extends Thread{
 
     private long processId;
     private AtomicLong timeStamp;
     private int port;
     private ServerSocket server;
 
-    public Lamport(int port, long processId){
+    public LamportServer(int port, long processId){
 
         this.port = port;
         this.timeStamp = new AtomicLong(0);
         this.processId = processId;
         this.server = new ServerSocket(this.port);
+        start();
 
     }
 
@@ -40,13 +43,13 @@ public class Lamport extends Thread{
 
     public long getProcessId(){
 
-        return this.id;
+        return this.processId;
 
     }
 
     public void setProcessId(long processId){
 
-        this.id = id;
+        this.processId = processId;
 
     }
 
@@ -56,19 +59,40 @@ public class Lamport extends Thread{
 
     }
     
-    public void sendEvent(long toId, String contentMessage){
+    public void sendEvent(Event message){
 
         timeStamp.incrementAndGet();
         System.out.println("Mensagem - From: "+ this.id + " To: "+ toId +" Message: " + contentMessage + " Relógio: "+ this.timeStamp);
 
     }
 
-    public void receiveEvent(long fromId, long toId, long receivedTimeStamp, String contentMessage){
+    public void receiveEvent(Event message){
 
         timeStamp.updateAndGet(current -> Math.max(current, receivedTimeStamp) + 1);
         System.out.println("Mensagem - From: "+ fromId + " To: "+ toId +" Message: " + contentMessage + " Relógio: "+ this.timeStamp);
 
     }
+
+    public void processMessage(Socket client){
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            if (".".equals(inputLine)) {
+                    break;
+            }
+                out.println(inputLine);
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+        Event message = mapper.readValue(inputLine, Event.class);
+        receiveEvent(message)
+
+        in.close();
+        clientSocket.close();
+
+    }
+
 
     @Override
     public void run() {
@@ -79,12 +103,15 @@ public class Lamport extends Thread{
 
                 Socket client = server.accept();
 
+                 new Thread(() -> {
+                    processMessage(client);
+                 }).start();
+
             }catch(IOException e){
 
                 e.printStackTrace();
 
-            }
-            
+            } 
 
         }
 
