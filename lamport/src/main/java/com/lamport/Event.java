@@ -1,4 +1,4 @@
-package lamport;
+package com.lamport;
 
 public class Event {
 

@@ -1,4 +1,5 @@
-package lamport;
+package com.lamport;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -100,7 +101,7 @@ class LamportServer extends Thread {
         receiveEvent(message);
 
         in.close();
-        client.close();
+        clientSocket.close();
 
     }
 

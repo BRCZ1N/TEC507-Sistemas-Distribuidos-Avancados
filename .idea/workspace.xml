@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2e0ae69-4634-4e46-8da8-19c35f888701" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KubernetesApiProvider">{}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0025950973364757" />
+      <entry key="MS500" value="1.338959729201407" />
+      <entry key="S2" value="2.862714436749831" />
+      <entry key="S5" value="5.302041965361442" />
+      <entry key="S10" value="7.541978184927673" />
+      <entry key="S30" value="10.345478445582849" />
+      <entry key="S60" value="12.325600153208951" />
+      <entry key="M2" value="14.938490013345511" />
+      <entry key="M5" value="20.612397821244006" />
+      <entry key="M10" value="31.495449670055073" />
+      <entry key="M15" value="40.04567160151242" />
+      <entry key="M30" value="53.99613536189291" />
+      <entry key="H1" value="64.0557114307825" />
+      <entry key="H2" value="70.11893515973219" />
+      <entry key="H4" value="73.4504780622274" />
+      <entry key="D1" value="76.392664917065" />
+      <entry key="W1" value="76.91284395298126" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="2.4493970153733688E-154" />
+      <entry key="S5" value="3.5974549619343902E-62" />
+      <entry key="S10" value="1.9767844551360357E-31" />
+      <entry key="S30" value="1.0560877527065712E-10" />
+      <entry key="S60" value="2.456152149849597E-5" />
+      <entry key="M2" value="0.015540861597887867" />
+      <entry key="M5" value="0.9208680203266715" />
+      <entry key="M10" value="3.7821331552856514" />
+      <entry key="M15" value="6.096470467636063" />
+      <entry key="M30" value="9.859818289533289" />
+      <entry key="H1" value="12.554845410791222" />
+      <entry key="H2" value="14.171631992891854" />
+      <entry key="H4" value="15.057694031977016" />
+      <entry key="D1" value="15.838892291740022" />
+      <entry key="W1" value="15.97688323541802" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9354881032148205" />
+      <entry key="MS500" value="1.3213953389402149" />
+      <entry key="S2" value="2.8055460113222557" />
+      <entry key="S5" value="5.15436116807494" />
+      <entry key="S10" value="7.393344508027134" />
+      <entry key="S30" value="10.263172700678549" />
+      <entry key="S60" value="12.273992712882352" />
+      <entry key="M2" value="14.921044138176356" />
+      <entry key="M5" value="21.507395881539665" />
+      <entry key="M10" value="35.24945943931153" />
+      <entry key="M15" value="46.11556482481079" />
+      <entry key="M30" value="63.83642245716488" />
+      <entry key="H1" value="76.59858330827986" />
+      <entry key="H2" value="84.2839219322082" />
+      <entry key="H4" value="88.50466956479505" />
+      <entry key="D1" value="92.23094706145605" />
+      <entry key="W1" value="92.8896393590956" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3ETfawDxYfEn9bq8QKCNQij1UPZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/com/lamport",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/org/example/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Bruno\OneDrive\Documentos\GitHub\TEC507-Sistemas-Distribuidos-Avancados\lamport\src\main\java\com\lamport" />
+      <recent name="C:\Users\Bruno\OneDrive\Documentos\GitHub\TEC507-Sistemas-Distribuidos-Avancados\TEC507-Sistemas-Distribuidos-Avancados\src\main\java\lamport" />
+      <recent name="C:\Users\Bruno\OneDrive\Documentos\GitHub\TEC507-Sistemas-Distribuidos-Avancados\TEC507-Sistemas-Distribuidos-Avancados\src\main\java\org\example" />
+      <recent name="C:\Users\Bruno\OneDrive\Documentos\GitHub\TEC507-Sistemas-Distribuidos-Avancados\TEC507-Sistemas-Distribuidos-Avancados\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.24374.151" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.24374.151" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2e0ae69-4634-4e46-8da8-19c35f888701" name="Changes" comment="" />
+      <created>1780207550470</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780207550470</updated>
+      <workItem from="1780207551546" duration="1925000" />
+      <workItem from="1780210106853" duration="261000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/lamport/src/main/java/com/lamport/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
