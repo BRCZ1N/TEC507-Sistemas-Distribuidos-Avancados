@@ -1,13 +1,13 @@
 
 public class Event {
 
-    private int fromId;
-    private int toId;
-    private int timeStamp;
+    private long fromId;
+    private long toId;
+    private long timeStamp;
     private String content;
     private MessageType type;
 
-    public Event(int fromId, int toId, String content, MessageType type) {
+    public Event(long fromId, long toId, String content, MessageType type) {
         this.fromId = fromId;
         this.toId = toId;
         this.timeStamp = 0;
@@ -16,7 +16,7 @@ public class Event {
 
     }
 
-    public Event(int fromId, Integer toId, int timeStamp, String content, MessageType type) {
+    public Event(long fromId, long toId, int timeStamp, String content, MessageType type) {
         this.fromId = fromId;
         this.toId = toId;
         this.timeStamp = timeStamp;
