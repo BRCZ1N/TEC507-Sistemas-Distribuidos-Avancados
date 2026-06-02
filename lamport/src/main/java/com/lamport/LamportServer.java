@@ -69,14 +69,14 @@ class LamportServer extends Thread {
     public void sendEvent(Event message) {
 
         timeStamp.incrementAndGet();
-        System.out.println("Mensagem - From: " + message.getFromId() + " To: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
+        System.out.println("Mensagem - From process: " + message.getFromId() + " To process: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
 
     }
 
     public void receiveEvent(Event message) {
 
         timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
-        System.out.println("Mensagem - From: " + message.getFromId() + " To: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
+        System.out.println("Mensagem - From process: " + message.getFromId() + " To process: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
 
     }
 
@@ -87,12 +87,13 @@ class LamportServer extends Thread {
         String inputLine;
         while (true) {
             try {
-                if (!((inputLine = in.readLine()) != null)) {
+                if (((inputLine = in.readLine()) != null)){
 
                     Event message = gson.fromJson(inputLine, Event.class);
                     receiveEvent(message);
+                    break;
 
-                };
+                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
