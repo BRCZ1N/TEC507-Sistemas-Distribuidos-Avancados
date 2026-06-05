@@ -53,7 +53,7 @@ public class Event implements Serializable {
 
     public String getMessage(){
 
-        return "Mensagem - From process: " + this.fromId + " To process: " + this.toId + " Message: " + this.content + " Relógio: " + this.timeStamp;
+        return "Messagem - Processo remetente: " + this.fromId + " - Processo destinatário: " + this.toId + " - Messagem: " + this.content + " - Relógio: " + this.timeStamp;
 
     }
 }

@@ -52,7 +52,7 @@ class LamportServer extends Thread {
 
             timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
 
-            System.out.println("Mensagem - From process: " + message.getFromId() + " - To process: " + message.getToId() + " Message: " + message.getContent() + " - Relógio: " + timeStamp.get());
+            System.out.println("Messagem - Processo remetente: " + message.getFromId() + " - Processo destinatário: " + message.getToId() + " - Messagem: " + message.getContent() + " - Relógio: " + timeStamp.get());
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
