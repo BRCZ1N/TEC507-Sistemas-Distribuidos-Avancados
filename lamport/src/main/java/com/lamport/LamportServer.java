@@ -1,25 +1,23 @@
 package com.lamport;
-import com.google.gson.Gson;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicLong;
 
 class LamportServer extends Thread {
 
-    private long processId;
+    private ProcessNode process;
     private AtomicLong timeStamp;
-    private int port;
     private ServerSocket server;
 
-    public LamportServer(int port, long processId) throws IOException {
+    public LamportServer(ProcessNode process) throws IOException {
 
-        this.port = port;
         this.timeStamp = new AtomicLong(0);
-        this.processId = processId;
-        this.server = new ServerSocket(this.port);
+        this.server = new ServerSocket(process.getPort());
+        this.process = process;
         start();
 
     }
@@ -36,81 +34,178 @@ class LamportServer extends Thread {
 
     }
 
-    public int getPort() {
-
-        return this.port;
-
-    }
-
-    public void setPort(int port) {
-
-        this.port = port;
-
-    }
-
-    public long getProcessId() {
-
-        return this.processId;
-
-    }
-
-    public void setProcessId(long processId) {
-
-        this.processId = processId;
-
-    }
-
     public void localEvent() {
 
         timeStamp.incrementAndGet();
+        System.out.println("Evento local - " + "Relógio: " + this.timeStamp);
 
     }
 
-    public void sendEvent(Event message) {
 
-        timeStamp.incrementAndGet();
-        System.out.println("Mensagem - From process: " + message.getFromId() + " To process: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
+    public void receiveEvent(Socket client) throws IOException {
 
-    }
+        try (
+                ObjectInputStream in = new ObjectInputStream(client.getInputStream())
+        ) {
 
-    public void receiveEvent(Event message) {
+            Event message = (Event) in.readObject();
 
-        timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
-        System.out.println("Mensagem - From process: " + message.getFromId() + " To process: " + message.getToId() + " Message: " + message.getContent() + " Relógio: " + this.timeStamp);
+            timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
 
-    }
+            System.out.println("Mensagem - From process: " + message.getFromId() + " - To process: " + message.getToId() + " Message: " + message.getContent() + " - Relógio: " + timeStamp.get());
 
-    public void processMessage(Socket client) throws IOException {
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-        Gson gson = new Gson();
-        String inputLine;
-        while (true) {
-            try {
-                if (((inputLine = in.readLine()) != null)){
-
-                    Event message = gson.fromJson(inputLine, Event.class);
-                    receiveEvent(message);
-                    break;
-
-                }
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            if (".".equals(inputLine)) {
-                break;
-            }
-            System.out.println(inputLine);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
 
-        in.close();
         client.close();
+    }
+
+    public void sendEvent(ProcessNode destination){
+
+        System.out.println("Digite a mensagem a ser enviada:");
+        Scanner scan = new Scanner(System.in);
+        String contentMessage = scan.nextLine();
+
+        try{
+
+            Socket socket = new Socket(
+                    destination.getHost(),
+                    destination.getPort()
+            );
+            ObjectOutputStream out =
+                    new ObjectOutputStream(
+                            socket.getOutputStream());
+            timeStamp.incrementAndGet();
+            Event event = new Event(process.getId(),destination.getId(),timeStamp.get(),contentMessage);
+            out.writeObject(event);
+            out.flush();
+
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void menuMessage() {
+
+        Scanner scan = new Scanner(System.in);
+        ProcessNode destination;
+
+        while(true){
+
+            System.out.println("Menu de mensagens - Lamport");
+            System.out.println("1 - Evento Local");
+            System.out.println("2 - Envio de mensagem");
+            System.out.println("3 - Sair");
+            String option = scan.nextLine();
+
+            switch (option) {
+
+                case "1":
+                    localEvent();
+                    break;
+
+                case "2":
+
+                    System.out.println("Escolha o processo que irá receber a mensagem:");
+                    String optionId;
+
+                    switch (process) {
+
+                        case P1:
+
+                            System.out.println("1 - P2");
+                            System.out.println("2 - P3");
+                            optionId = scan.nextLine();
+                            switch (optionId) {
+
+                                case "1":
+                                    destination =  ProcessNode.valueOf("P2");
+                                    sendEvent(destination);
+                                    break;
+
+                                case "2":
+                                    destination = ProcessNode.valueOf("P3");
+                                    sendEvent(destination);
+                                    break;
+
+                                default:
+                                    System.out.println("P1 não pode enviar para si mesmo.");
+                            }
+
+                            break;
+
+                        case P2:
+
+                            System.out.println("1 - P1");
+                            System.out.println("2 - P3");
+                            optionId = scan.nextLine();
+
+                            switch (optionId) {
+
+                                case "1":
+                                    destination = ProcessNode.valueOf("P1");
+                                    sendEvent(destination);
+                                    break;
+
+                                case "2":
+                                    destination = ProcessNode.valueOf("P3");
+                                    sendEvent(destination);
+                                    break;
+
+                                default:
+                                    System.out.println("P2 não pode enviar para si mesmo.");
+                            }
+
+                            break;
+
+                        case P3:
+
+                            System.out.println("1 - P1");
+                            System.out.println("2 - P2");
+                            optionId = scan.nextLine();
+
+                            switch (optionId) {
+
+                                case "1":
+                                    destination = ProcessNode.valueOf("P1");
+                                    sendEvent(destination);
+                                    break;
+
+                                case "2":
+                                    destination = ProcessNode.valueOf("P2");
+                                    sendEvent(destination);
+                                    break;
+
+                                default:
+                                    System.out.println("P3 não pode enviar para si mesmo.");
+                            }
+
+                            break;
+                    }
+
+                    break;
+
+                case "3":
+
+                    return;
+            }
+
+
+        }
 
     }
 
 
     @Override
     public void run() {
+
+        new Thread(() -> {
+            menuMessage();
+        }).start();
 
         while (true) {
 
@@ -120,7 +215,7 @@ class LamportServer extends Thread {
 
                 new Thread(() -> {
                     try {
-                        processMessage(client);
+                        receiveEvent(client);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

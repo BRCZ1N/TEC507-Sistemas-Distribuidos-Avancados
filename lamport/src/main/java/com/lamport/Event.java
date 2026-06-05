@@ -1,7 +1,10 @@
 package com.lamport;
 
-public class Event {
+import java.io.Serializable;
 
+public class Event implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private long fromId;
     private long toId;
     private long timeStamp;
@@ -46,5 +49,11 @@ public class Event {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getMessage(){
+
+        return "Mensagem - From process: " + this.fromId + " To process: " + this.toId + " Message: " + this.content + " Relógio: " + this.timeStamp;
+
     }
 }
