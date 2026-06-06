@@ -29,6 +29,7 @@
             </plugin>
 
         </plugins>
+        <finalName>lamport</finalName>
     </build>
 
     <properties>
