@@ -82,8 +82,19 @@ class LamportServer extends Thread {
             ObjectOutputStream out =
                     new ObjectOutputStream(
                             socket.getOutputStream());
+
             timeStamp.incrementAndGet();
             Event event = new Event(process.getId(),destination.getId(),timeStamp.get(),contentMessage);
+
+            System.out.println("=========================================");
+            System.out.println("Mensagem Enviada");
+            System.out.println("Processo Origem: " + event.getFromId());
+            System.out.println("Processo Destino: " + event.getToId());
+            System.out.println("Relógio Local Após Incremento: " + timeStamp.get());
+            System.out.println("Timestamp Enviado: " + event.getTimeStamp());
+            System.out.println("Conteúdo: " + event.getContent());
+            System.out.println("=========================================");
+
             out.writeObject(event);
             out.flush();
 
