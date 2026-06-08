@@ -24,61 +24,61 @@
   <component name="KubernetesApiProvider">{}</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2414841470056568" />
-      <entry key="MS500" value="1.789122362685768" />
-      <entry key="S2" value="2.406017987851481" />
-      <entry key="S5" value="3.5492194841387534" />
-      <entry key="S10" value="5.2831178765809765" />
-      <entry key="S30" value="7.919256558077299" />
-      <entry key="S60" value="9.216535098327567" />
-      <entry key="M2" value="10.454382337310534" />
-      <entry key="M5" value="12.03609412417562" />
-      <entry key="M10" value="14.890071326872429" />
-      <entry key="M15" value="19.702154478439766" />
-      <entry key="M30" value="40.71233363686091" />
-      <entry key="H1" value="85.18043593133356" />
-      <entry key="H2" value="159.85403657957693" />
-      <entry key="H4" value="247.42569183443356" />
-      <entry key="D1" value="384.12534489354414" />
-      <entry key="W1" value="417.1436472061125" />
+      <entry key="MS100" value="1.0000178747468011" />
+      <entry key="MS500" value="1.2394603429768811" />
+      <entry key="S2" value="4.139644783791436" />
+      <entry key="S5" value="8.692849825109974" />
+      <entry key="S10" value="14.38786223956206" />
+      <entry key="S30" value="27.66867874751512" />
+      <entry key="S60" value="35.104510572019905" />
+      <entry key="M2" value="41.70096596303255" />
+      <entry key="M5" value="49.975309513266126" />
+      <entry key="M10" value="54.62856374393655" />
+      <entry key="M15" value="56.52972303188105" />
+      <entry key="M30" value="59.0228228670789" />
+      <entry key="H1" value="68.02661359348731" />
+      <entry key="H2" value="110.09852711614741" />
+      <entry key="H4" value="198.67090522880562" />
+      <entry key="D1" value="409.4471977965214" />
+      <entry key="W1" value="472.3760835156288" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.5796889096700708E-5" />
-      <entry key="MS500" value="0.10957571516450437" />
-      <entry key="S2" value="0.5753453116162931" />
-      <entry key="S5" value="0.8016253293993938" />
-      <entry key="S10" value="0.8953353167385912" />
-      <entry key="S30" value="0.9638184566345851" />
-      <entry key="S60" value="0.9817427398442163" />
-      <entry key="M2" value="0.9916726718452661" />
-      <entry key="M5" value="1.1347247951070525" />
-      <entry key="M10" value="1.9022552755155022" />
-      <entry key="M15" value="3.0069189534809793" />
-      <entry key="M30" value="6.632070764074897" />
-      <entry key="H1" value="12.714604340670702" />
-      <entry key="H2" value="22.185189822249722" />
-      <entry key="H4" value="33.48168599411094" />
-      <entry key="D1" value="51.70794652151649" />
-      <entry key="W1" value="56.20007874438522" />
+      <entry key="MS100" value="1.7991966175378204E-9" />
+      <entry key="MS500" value="0.017824433060960727" />
+      <entry key="S2" value="0.36623549961527685" />
+      <entry key="S5" value="0.72756331125333" />
+      <entry key="S10" value="1.0606475860294924" />
+      <entry key="S30" value="1.5622368212143791" />
+      <entry key="S60" value="1.8485407570091694" />
+      <entry key="M2" value="2.3878585592796395" />
+      <entry key="M5" value="3.424205991653263" />
+      <entry key="M10" value="4.0767437974183505" />
+      <entry key="M15" value="4.349704220338881" />
+      <entry key="M30" value="4.717784709890785" />
+      <entry key="H1" value="6.052514532638612" />
+      <entry key="H2" value="11.809446698193891" />
+      <entry key="H4" value="23.626222621066667" />
+      <entry key="D1" value="51.90462006643617" />
+      <entry key="W1" value="60.42295122063371" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.2243927479846248" />
-      <entry key="MS500" value="1.811002991438858" />
-      <entry key="S2" value="2.7462184684763336" />
-      <entry key="S5" value="4.187310450514892" />
-      <entry key="S10" value="6.076997417668015" />
-      <entry key="S30" value="8.843109095717153" />
-      <entry key="S60" value="10.177323460068596" />
-      <entry key="M2" value="11.435285268703812" />
-      <entry key="M5" value="13.165908097369002" />
-      <entry key="M10" value="16.78840343682602" />
-      <entry key="M15" value="22.704860495617467" />
-      <entry key="M30" value="47.33843555096984" />
-      <entry key="H1" value="97.88639697218747" />
-      <entry key="H2" value="182.0287692342731" />
-      <entry key="H4" value="280.8981876264183" />
-      <entry key="D1" value="435.8306876222248" />
-      <entry key="W1" value="473.34331647386153" />
+      <entry key="MS100" value="0.9862496773022704" />
+      <entry key="MS500" value="1.2388357571258601" />
+      <entry key="S2" value="4.382752442963012" />
+      <entry key="S5" value="9.308772492321701" />
+      <entry key="S10" value="15.360092107907008" />
+      <entry key="S30" value="29.18322568986326" />
+      <entry key="S60" value="36.92007266475192" />
+      <entry key="M2" value="44.05737093201159" />
+      <entry key="M5" value="53.373494070193736" />
+      <entry key="M10" value="58.68786521412933" />
+      <entry key="M15" value="60.86654722034395" />
+      <entry key="M30" value="63.73340447188162" />
+      <entry key="H1" value="74.07452470982085" />
+      <entry key="H2" value="121.90278726872725" />
+      <entry key="H4" value="222.29102258610587" />
+      <entry key="D1" value="461.34929036250793" />
+      <entry key="W1" value="532.7986072687075" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -90,41 +90,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Lamport.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Teste.executor": "Run",
-    "Maven.lamport [clean].executor": "Run",
-    "Maven.lamport [compile].executor": "Run",
-    "Maven.lamport [deploy].executor": "Run",
-    "Maven.lamport [install].executor": "Run",
-    "Maven.lamport [package].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/com/lamport",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Lamport.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Teste.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lamport [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lamport [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lamport [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lamport [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.lamport [package].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/com/lamport&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Bruno/OneDrive/Documentos/GitHub/TEC507-Sistemas-Distribuidos-Avancados/lamport/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Bruno\OneDrive\Documentos\GitHub\TEC507-Sistemas-Distribuidos-Avancados\lamport\src\main\java\com\lamport" />
@@ -172,7 +172,8 @@
       <workItem from="1780210106853" duration="2763000" />
       <workItem from="1780682903689" duration="8439000" />
       <workItem from="1780696613696" duration="51000" />
-      <workItem from="1780696748777" duration="5342000" />
+      <workItem from="1780696748777" duration="6033000" />
+      <workItem from="1780944231698" duration="2776000" />
     </task>
     <servers />
   </component>

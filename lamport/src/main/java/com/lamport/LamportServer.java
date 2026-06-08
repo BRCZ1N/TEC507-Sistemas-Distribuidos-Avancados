@@ -49,10 +49,16 @@ class LamportServer extends Thread {
         ) {
 
             Event message = (Event) in.readObject();
-
+            long previousTimeStamp = timeStamp.get();
             timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
 
-            System.out.println("Messagem - Processo remetente: " + message.getFromId() + " - Processo destinatário: " + message.getToId() + " - Messagem: " + message.getContent() + " - Relógio: " + timeStamp.get());
+            System.out.println("=========================================");
+            System.out.println("Mensagem Recebida do Processo: " + message.getFromId());
+            System.out.println("Relógio Local Antes: " + previousTimeStamp);
+            System.out.println("Relógio na Mensagem: " + message.getTimeStamp());
+            System.out.println("Relógio Local Atualizado: " + timeStamp.get());
+            System.out.println("Conteúdo: " + message.getContent());
+            System.out.println("=========================================");
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
