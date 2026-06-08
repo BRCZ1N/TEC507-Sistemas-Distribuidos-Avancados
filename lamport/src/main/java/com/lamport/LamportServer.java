@@ -41,7 +41,6 @@ class LamportServer extends Thread {
 
     }
 
-
     public void receiveEvent(Socket client) throws IOException {
 
         try (
