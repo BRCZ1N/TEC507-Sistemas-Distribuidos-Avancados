@@ -6,7 +6,7 @@ O sistema simula três processos independentes (P1, P2 e P3), que se comunicam p
 
 ---
 
-## 🧠 Objetivo
+## Objetivo
 
 Demonstrar o funcionamento de relógios lógicos em um sistema distribuído sem relógio global, garantindo a propriedade:
 
@@ -14,7 +14,7 @@ Demonstrar o funcionamento de relógios lógicos em um sistema distribuído sem 
 
 ---
 
-## 📦 Requisitos
+## Requisitos
 
 - Java 17+
 - Maven 3.9+
