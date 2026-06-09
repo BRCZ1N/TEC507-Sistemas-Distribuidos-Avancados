@@ -1,11 +1,25 @@
 # Relógios Lógicos de Lamport
 
-Implementação dos Relógios Lógicos de Lamport utilizando Java 17.
+Implementação do algoritmo de Relógios Lógicos de Lamport em Java 17, utilizando comunicação entre processos distribuídos via sockets TCP.
 
-## Requisitos
+O sistema simula três processos independentes (P1, P2 e P3), que se comunicam por troca de mensagens e mantêm um relógio lógico para garantir a ordenação causal dos eventos.
+
+---
+
+## 🧠 Objetivo
+
+Demonstrar o funcionamento de relógios lógicos em um sistema distribuído sem relógio global, garantindo a propriedade:
+
+> Se um evento A ocorre antes de B (relação causal), então o relógio lógico de A é menor que o de B.
+
+---
+
+## 📦 Requisitos
 
 - Java 17+
 - Maven 3.9+
+
+---
 
 ## Compilação
 
