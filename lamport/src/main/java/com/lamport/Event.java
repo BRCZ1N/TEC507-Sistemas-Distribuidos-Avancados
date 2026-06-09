@@ -7,20 +7,20 @@ public class Event implements Serializable {
     private static final long serialVersionUID = 1L;
     private long fromId;
     private long toId;
-    private long timeStamp;
+    private long clock;
     private String content;
 
-    public Event(long fromId, long toId, long timeStamp, String content) {
+    public Event(long fromId, long toId, long clock, String content) {
 
         this.fromId = fromId;
         this.toId = toId;
-        this.timeStamp = timeStamp;
+        this.clock = clock;
         this.content = content;
 
     }
 
     public long getFromId() {
-        return fromId;
+        return this.fromId;
     }
 
     public void setFromId(long fromId) {
@@ -28,23 +28,23 @@ public class Event implements Serializable {
     }
 
     public long getToId() {
-        return toId;
+        return this.toId;
     }
 
     public void setToId(long toId) {
         this.toId = toId;
     }
 
-    public long getTimeStamp() {
-        return timeStamp;
+    public long getClock() {
+        return this.clock;
     }
 
-    public void setTimeStamp(long timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setClock(long clock) {
+        this.clock = clock;
     }
 
     public String getContent() {
-        return content;
+        return this.content;
     }
 
     public void setContent(String content) {

@@ -10,34 +10,34 @@ import java.util.concurrent.atomic.AtomicLong;
 class LamportServer extends Thread {
 
     private ProcessNode process;
-    private AtomicLong timeStamp;
+    private AtomicLong clock;
     private ServerSocket server;
 
     public LamportServer(ProcessNode process) throws IOException {
 
-        this.timeStamp = new AtomicLong(0);
+        this.clock = new AtomicLong(0);
         this.server = new ServerSocket(process.getPort());
         this.process = process;
         start();
 
     }
 
-    public AtomicLong getTimeStamp() {
+    public AtomicLong getClock() {
 
-        return this.timeStamp;
+        return this.clock;
 
     }
 
-    public void setTimeStamp(AtomicLong timeStamp) {
+    public void setClock(AtomicLong clock) {
 
-        this.timeStamp = timeStamp;
+        this.clock = clock;
 
     }
 
     public void localEvent() {
 
-        timeStamp.incrementAndGet();
-        System.out.println("Evento local - " + "Relógio: " + this.timeStamp);
+        clock.incrementAndGet();
+        System.out.println("Evento local - " + "Relógio: " + this.clock);
 
     }
 
@@ -48,14 +48,14 @@ class LamportServer extends Thread {
         ) {
 
             Event message = (Event) in.readObject();
-            long previousTimeStamp = timeStamp.get();
-            timeStamp.updateAndGet(current -> Math.max(current, message.getTimeStamp()) + 1);
+            long previousClock = clock.get();
+            clock.updateAndGet(current -> Math.max(current, message.getClock()) + 1);
 
             System.out.println("=========================================");
             System.out.println("Mensagem Recebida do Processo: " + message.getFromId());
-            System.out.println("Relógio Local Antes: " + previousTimeStamp);
-            System.out.println("Relógio na Mensagem: " + message.getTimeStamp());
-            System.out.println("Relógio Local Atualizado: " + timeStamp.get());
+            System.out.println("Relógio Local Antes: " + previousClock);
+            System.out.println("Relógio na Mensagem: " + message.getClock());
+            System.out.println("Relógio Local Atualizado: " + clock.get());
             System.out.println("Conteúdo: " + message.getContent());
             System.out.println("=========================================");
 
@@ -74,23 +74,18 @@ class LamportServer extends Thread {
 
         try{
 
-            Socket socket = new Socket(
-                    destination.getHost(),
-                    destination.getPort()
-            );
-            ObjectOutputStream out =
-                    new ObjectOutputStream(
-                            socket.getOutputStream());
+            Socket socket = new Socket(destination.getHost(), destination.getPort());
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
 
-            timeStamp.incrementAndGet();
-            Event event = new Event(process.getId(),destination.getId(),timeStamp.get(),contentMessage);
+            clock.incrementAndGet();
+            Event event = new Event(process.getId(),destination.getId(),clock.get(),contentMessage);
 
             System.out.println("=========================================");
             System.out.println("Mensagem Enviada");
             System.out.println("Processo Origem: " + event.getFromId());
             System.out.println("Processo Destino: " + event.getToId());
-            System.out.println("Relógio Local Após Incremento: " + timeStamp.get());
-            System.out.println("Timestamp Enviado: " + event.getTimeStamp());
+            System.out.println("Relógio Local Após Incremento: " + clock.get());
+            System.out.println("Relógio Enviado: " + event.getClock());
             System.out.println("Conteúdo: " + event.getContent());
             System.out.println("=========================================");
 
