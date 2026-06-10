@@ -12,6 +12,7 @@ class LamportServer extends Thread {
     private ProcessNode process;
     private AtomicLong clock;
     private ServerSocket server;
+    private final Scanner scan = new Scanner(System.in);
 
     public LamportServer(ProcessNode process) throws IOException {
 
@@ -37,7 +38,7 @@ class LamportServer extends Thread {
     public void localEvent() {
 
         clock.incrementAndGet();
-        System.out.println("Evento local - " + "Relógio: " + this.clock);
+        System.out.println("Evento local - Relógio: " + this.clock.get());
 
     }
 
@@ -69,7 +70,6 @@ class LamportServer extends Thread {
     public void sendEvent(ProcessNode destination){
 
         System.out.println("Digite a mensagem a ser enviada:");
-        Scanner scan = new Scanner(System.in);
         String contentMessage = scan.nextLine();
 
         try{
@@ -91,18 +91,19 @@ class LamportServer extends Thread {
 
             out.writeObject(event);
             out.flush();
+            out.close();
+            socket.close();
 
         } catch (UnknownHostException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Não foi possível conectar ao processo destino.");
         }
 
     }
 
     public void menuMessage() {
 
-        Scanner scan = new Scanner(System.in);
         ProcessNode destination;
 
         while(true){
@@ -228,7 +229,7 @@ class LamportServer extends Thread {
                     try {
                         receiveEvent(client);
                     } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        System.out.println("Erro ao receber mensagem.");
                     }
                 }).start();
 
